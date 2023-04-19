@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const Example = () => {
-  // TODO:add comments for what each of these mean
   const { data, isLoading, error, isFetching } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
@@ -11,8 +10,6 @@ const Example = () => {
         .get("https://api.github.com/repos/advide2001/movie-search-app")
         .then((res) => res.data),
   });
-
-  console.log(data);
 
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
