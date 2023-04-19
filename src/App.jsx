@@ -3,12 +3,17 @@ import {
   QueryClientProvider,
   useQuery,
 } from "@tanstack/react-query";
+import axios from "axios";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <header>
-      <h1>Hello, World!</h1>
-    </header>
+    <QueryClientProvider client={queryClient}>
+      <header>
+        <h1>Hello, World!</h1>
+      </header>
+    </QueryClientProvider>
   );
 }
 
